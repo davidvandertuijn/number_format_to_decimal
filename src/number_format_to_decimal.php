@@ -4,6 +4,7 @@
  * Number Format To Decimal.
  *
  * @param string $sValue
+ *
  * @return string $sDecimal
  */
 function number_format_to_decimal($sValue)
