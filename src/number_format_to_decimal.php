@@ -7,7 +7,7 @@
  *
  * @return string $sDecimal
  */
-function number_format_to_decimal($sValue)
+function number_format_to_decimal(string $sValue): string
 {
     $iCountCommaSeperators = 0;
     $iCountDotSeperators = 0;
