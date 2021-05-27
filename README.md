@@ -3,7 +3,6 @@
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_to_decimal"><img src="https://poser.pugx.org/davidvandertuijn/number_format_to_decimal/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_to_decimal"><img src="https://poser.pugx.org/davidvandertuijn/number_format_to_decimal/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_to_decimal"><img src="https://poser.pugx.org/davidvandertuijn/number_format_to_decimal/license.svg" alt="License"></a>
-<img src="https://github.styleci.io/repos/93096125/shield?style=flat" alt="StyleCI">
 
 ## Install
 
