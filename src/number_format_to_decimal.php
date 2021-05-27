@@ -3,12 +3,16 @@
 /**
  * Number Format To Decimal.
  *
- * @param string $sValue
+ * @param string|null $sValue
  *
- * @return string $sDecimal
+ * @return mixed
  */
-function number_format_to_decimal(string $sValue): string
+function number_format_to_decimal(?string $sValue)
 {
+    if (is_null($sValue)) {
+        return null;
+    }
+    
     $iCountCommaSeperators = 0;
     $iCountDotSeperators = 0;
 
