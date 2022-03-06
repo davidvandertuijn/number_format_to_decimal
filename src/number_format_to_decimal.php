@@ -16,57 +16,57 @@ function number_format_to_decimal(?string $value)
     $countCommaSeperators = 0;
     $countDotSeperators = 0;
 
-    // Controleren of de komma seperator voorkomt.
+    // Check if the comma separator exists.
 
     if (strpos($value, ',') !== false) {
         $countCommaSeperators += substr_count($value, ',');
     }
 
-    // Controleren of de punt seperator voorkomt.
+    // Check if the dot separator exists.
 
     if (strpos($value, '.') !== false) {
         $countDotSeperators += substr_count($value, '.');
     }
 
-    // Indien er één seperator is, en het is een komma, dan vervangen we de komma door een punt.
+    // If there is one separator, and it is a comma, we replace the comma with a period.
 
     if ($countCommaSeperators == 1 && $countDotSeperators == 0) {
         $decimal = str_replace(',', '.', $value);
     }
 
-    // Indien er één seperator is, en het is een punt, dan doen we niets.
+    // If there's one separator, and it's a dot, we don't do anything.
 
     elseif ($countCommaSeperators == 0 && $countDotSeperators == 1) {
         $decimal = $value;
     }
 
-    // Indien er twee verschillende seperators zijn.
+    // If there are two different separators.
 
     elseif ($countCommaSeperators == 1 && $countDotSeperators == 1) {
         $decimal = str_replace(',', '.', $value);
         $decimal = preg_replace('/[.](?![^.]*$)/', '', $decimal);
     }
 
-    // Indien er meererde punt seperators zijn maar geen komma seperators.
+    // If there are multiple dot separators but no comma separators.
 
     elseif ($countCommaSeperators == 0 && $countDotSeperators > 1) {
         $decimal = str_replace('.', '', $value);
     }
 
-    // Indien er meererde komma seperators zijn maar geen punt seperators.
+    // If there are multiple comma separators but no dot separators.
 
     elseif ($countCommaSeperators > 1 && $countDotSeperators == 0) {
         $decimal = str_replace(',', '', $value);
     }
 
-    // Indien er meerdere punt seperators zijn en één komma seperator.
+    // If there are multiple dot separators and one comma separator.
 
     elseif ($countCommaSeperators == 1 && $countDotSeperators > 1) {
         $decimal = str_replace('.', '', $value);
         $decimal = str_replace(',', '.', $decimal);
     }
 
-    // Indien er meerdere komma seperators zijn en één punt seperator.
+    // If there are multiple comma separators and one dot separator.
 
     elseif ($countCommaSeperators > 1 && $countDotSeperators == 1) {
         $decimal = str_replace(',', '', $value);
