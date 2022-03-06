@@ -12,7 +12,7 @@ function number_format_to_decimal(?string $value)
     if (is_null($value)) {
         return null;
     }
-    
+
     $countCommaSeperators = 0;
     $countDotSeperators = 0;
 
