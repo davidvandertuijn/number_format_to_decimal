@@ -3,76 +3,76 @@
 /**
  * Number Format To Decimal.
  *
- * @param string|null $sValue
+ * @param string|null $value
  *
  * @return mixed
  */
-function number_format_to_decimal(?string $sValue)
+function number_format_to_decimal(?string $value)
 {
-    if (is_null($sValue)) {
+    if (is_null($value)) {
         return null;
     }
     
-    $iCountCommaSeperators = 0;
-    $iCountDotSeperators = 0;
+    $countCommaSeperators = 0;
+    $countDotSeperators = 0;
 
     // Controleren of de komma seperator voorkomt.
 
-    if (strpos($sValue, ',') !== false) {
-        $iCountCommaSeperators += substr_count($sValue, ',');
+    if (strpos($value, ',') !== false) {
+        $countCommaSeperators += substr_count($value, ',');
     }
 
     // Controleren of de punt seperator voorkomt.
 
-    if (strpos($sValue, '.') !== false) {
-        $iCountDotSeperators += substr_count($sValue, '.');
+    if (strpos($value, '.') !== false) {
+        $countDotSeperators += substr_count($value, '.');
     }
 
     // Indien er één seperator is, en het is een komma, dan vervangen we de komma door een punt.
 
-    if ($iCountCommaSeperators == 1 && $iCountDotSeperators == 0) {
-        $sDecimal = str_replace(',', '.', $sValue);
+    if ($countCommaSeperators == 1 && $countDotSeperators == 0) {
+        $decimal = str_replace(',', '.', $value);
     }
 
     // Indien er één seperator is, en het is een punt, dan doen we niets.
 
-    elseif ($iCountCommaSeperators == 0 && $iCountDotSeperators == 1) {
-        $sDecimal = $sValue;
+    elseif ($countCommaSeperators == 0 && $countDotSeperators == 1) {
+        $decimal = $value;
     }
 
     // Indien er twee verschillende seperators zijn.
 
-    elseif ($iCountCommaSeperators == 1 && $iCountDotSeperators == 1) {
-        $sDecimal = str_replace(',', '.', $sValue);
-        $sDecimal = preg_replace('/[.](?![^.]*$)/', '', $sDecimal);
+    elseif ($countCommaSeperators == 1 && $countDotSeperators == 1) {
+        $decimal = str_replace(',', '.', $value);
+        $decimal = preg_replace('/[.](?![^.]*$)/', '', $decimal);
     }
 
     // Indien er meererde punt seperators zijn maar geen komma seperators.
 
-    elseif ($iCountCommaSeperators == 0 && $iCountDotSeperators > 1) {
-        $sDecimal = str_replace('.', '', $sValue);
+    elseif ($countCommaSeperators == 0 && $countDotSeperators > 1) {
+        $decimal = str_replace('.', '', $value);
     }
 
     // Indien er meererde komma seperators zijn maar geen punt seperators.
 
-    elseif ($iCountCommaSeperators > 1 && $iCountDotSeperators == 0) {
-        $sDecimal = str_replace(',', '', $sValue);
+    elseif ($countCommaSeperators > 1 && $countDotSeperators == 0) {
+        $decimal = str_replace(',', '', $value);
     }
 
     // Indien er meerdere punt seperators zijn en één komma seperator.
 
-    elseif ($iCountCommaSeperators == 1 && $iCountDotSeperators > 1) {
-        $sDecimal = str_replace('.', '', $sValue);
-        $sDecimal = str_replace(',', '.', $sDecimal);
+    elseif ($countCommaSeperators == 1 && $countDotSeperators > 1) {
+        $decimal = str_replace('.', '', $value);
+        $decimal = str_replace(',', '.', $decimal);
     }
 
     // Indien er meerdere komma seperators zijn en één punt seperator.
 
-    elseif ($iCountCommaSeperators > 1 && $iCountDotSeperators == 1) {
-        $sDecimal = str_replace(',', '', $sValue);
+    elseif ($countCommaSeperators > 1 && $countDotSeperators == 1) {
+        $decimal = str_replace(',', '', $value);
     } else {
-        $sDecimal = $sValue;
+        $decimal = $value;
     }
 
-    return $sDecimal;
+    return $decimal;
 }
