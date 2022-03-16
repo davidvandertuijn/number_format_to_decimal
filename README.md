@@ -4,6 +4,8 @@
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_to_decimal"><img src="https://poser.pugx.org/davidvandertuijn/number_format_to_decimal/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_to_decimal"><img src="https://poser.pugx.org/davidvandertuijn/number_format_to_decimal/license.svg" alt="License"></a>
 
+![Number Format To Decimal](https://cdn.davidvandertuijn.nl/github/number_format_to_decimal.png)
+
 ## Install
 
 ```
