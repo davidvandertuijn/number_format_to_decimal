@@ -28,16 +28,36 @@ function number_format_to_decimal(?string $value)
         $countDotSeperators += substr_count($value, '.');
     }
 
-    // If there is one separator, and it is a comma, we replace the comma with a period.
+    // If there is one separator, and it is a comma.
 
     if ($countCommaSeperators == 1 && $countDotSeperators == 0) {
-        $decimal = str_replace(',', '.', $value);
+        $countDecimals = strlen(substr($value, strpos($value, ",") + 1));
+
+        // If there are 3 decimal places, we can assume that it is a thousand.
+
+        if ($countDecimals == 3) {
+            // Remove the comma.
+            $decimal = str_replace(',', '', $value);
+        } else {
+            // Replace the comma with a period.
+            $decimal = str_replace(',', '.', $value);
+        }
     }
 
-    // If there's one separator, and it's a dot, we don't do anything.
+    // If there's one separator, and it's a dot.
 
     elseif ($countCommaSeperators == 0 && $countDotSeperators == 1) {
-        $decimal = $value;
+        $countDecimals = strlen(substr($value, strpos($value, ".") + 1));
+
+        // If there are 3 decimal places, we can assume that it is a thousand.
+
+        if ($countDecimals == 3) {
+            // We remove the period.
+            $decimal = str_replace('.', '', $value);
+        } else {
+            // Do Noting
+            $decimal = $value;
+        }
     }
 
     // If there are two different separators.

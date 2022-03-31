@@ -19,6 +19,10 @@ number_format_to_decimal('1000,99'); // 1000.99
 number_format_to_decimal('1000.99'); // 1000.99
 number_format_to_decimal('1.000,99'); // 1000.99
 number_format_to_decimal('1,000.99'); // 1000.99
+number_format_to_decimal('10.000'); // 10000
+number_format_to_decimal('100.000'); // 100000
+number_format_to_decimal('10,000'); // 10000
+number_format_to_decimal('100,000'); // 100000
 number_format_to_decimal('1.000.000'); // 1000000
 number_format_to_decimal('1.000.000,99'); // 1000000.99
 number_format_to_decimal('1,000,000'); // 1000000
