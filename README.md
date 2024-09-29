@@ -6,6 +6,10 @@
 
 ![Number Format To Decimal](https://cdn.davidvandertuijn.nl/github/number_format_to_decimal.png)
 
+The Number Format to Decimal converter is a versatile tool designed to simplify the process of converting numerical values from various formats into a standardized decimal format. This functionality is particularly beneficial for professionals working with data, finance, or programming, where precise numerical representation is crucial.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/davidvandertuijn)
+
 ## Install
 
 ```
