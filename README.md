@@ -12,7 +12,7 @@ The Number Format to Decimal converter is a versatile tool designed to simplify 
 
 ## Install
 
-```
+```shell
 composer require davidvandertuijn/number_format_to_decimal
 ```
 
